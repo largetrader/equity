@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Scalping Open Flow</title>
+    <meta name="description" content="Informativa sul trattamento dei dati personali del sito andreatropea.com, resa ai sensi dell'art. 13 GDPR.">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/png" href="../favicon-v2.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #f7f8fb;
+            --bg-card: #ffffff;
+            --border-subtle: rgba(0,0,0,0.06);
+            --text-primary: #1a1f36;
+            --text-secondary: #5a6278;
+            --text-muted: #8d95a8;
+            --accent-brand: #3d6fb5;
+            --accent-brand-bg: rgba(61,111,181,0.08);
+            --accent-brand-border: rgba(61,111,181,0.15);
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'IBM Plex Mono', monospace;
+            --radius-lg: 14px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.04), 0 0 0 1px rgba(0,0,0,0.04);
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); background: var(--bg-primary); color: var(--text-primary); line-height: 1.7; }
+        .container { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+
+        .navbar { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid var(--border-subtle); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+        .navbar .container { max-width: 1100px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+        .nav-brand { display: flex; align-items: center; text-decoration: none; }
+        .nav-logo-img { height: 36px; width: auto; }
+        .nav-back {
+            font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            color: var(--accent-brand); background: var(--accent-brand-bg);
+            padding: 7px 14px; border-radius: 100px; border: 1px solid var(--accent-brand-border);
+            text-decoration: none; transition: 0.2s ease;
+        }
+        .nav-back:hover { background: rgba(61,111,181,0.14); }
+
+        .doc-head { padding: 56px 0 8px; }
+        .doc-label { font-family: var(--font-mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-brand); margin-bottom: 8px; }
+        .doc-title { font-size: clamp(24px, 4vw, 34px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; }
+        .doc-meta { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); margin-top: 14px; }
+
+        .doc-body { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 40px; margin: 32px 0 56px; }
+        .doc-body h2 { font-size: 17px; font-weight: 700; margin: 36px 0 12px; letter-spacing: -0.01em; padding-top: 4px; }
+        .doc-body h2:first-child { margin-top: 0; }
+        .doc-body h3 { font-size: 15px; font-weight: 600; margin: 24px 0 8px; color: var(--text-primary); }
+        .doc-body p { font-size: 15px; color: var(--text-secondary); margin-bottom: 14px; }
+        .doc-body ul { margin: 0 0 16px 20px; }
+        .doc-body li { font-size: 15px; color: var(--text-secondary); margin-bottom: 8px; }
+        .doc-body a { color: var(--accent-brand); text-decoration: none; }
+        .doc-body a:hover { text-decoration: underline; }
+        .doc-body strong { color: var(--text-primary); font-weight: 600; }
+        .callout { background: var(--accent-brand-bg); border: 1px solid var(--accent-brand-border); border-radius: 10px; padding: 18px 20px; margin: 20px 0; }
+        .callout p:last-child { margin-bottom: 0; }
+
+        .tbl-scroll { overflow-x: auto; margin: 16px 0 20px; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; min-width: 560px; }
+        th { font-family: var(--font-mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); text-align: left; padding: 10px 12px; background: #f1f3f8; border-bottom: 1px solid var(--border-subtle); }
+        td { font-size: 14px; color: var(--text-secondary); padding: 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+
+        .footer { padding: 36px 0; border-top: 1px solid var(--border-subtle); }
+        .footer .container { max-width: 1100px; }
+        .footer-legal { display: flex; flex-direction: column; gap: 14px; }
+        .footer-entity { font-size: 12px; color: var(--text-secondary); line-height: 1.7; }
+        .footer-entity a { color: var(--accent-brand); text-decoration: none; }
+        .footer-entity a:hover { text-decoration: underline; }
+        .footer-disclaimer { font-size: 11px; color: var(--text-muted); line-height: 1.7; }
+
+        @media (max-width: 768px) {
+            .navbar .container { height: 58px; }
+            .nav-logo-img { height: 30px; }
+            .nav-back { font-size: 10px; padding: 6px 11px; white-space: nowrap; }
+            .doc-body { padding: 26px 20px; border-radius: 10px; }
+            .doc-head { padding: 36px 0 4px; }
+            .doc-body p, .doc-body li { font-size: 14.5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="../" class="nav-brand">
+                <img src="../logo.png" alt="LargeTrader" class="nav-logo-img">
+            </a>
+            <a href="../" class="nav-back">← Torna ai risultati</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="doc-head">
+            <p class="doc-label">Informativa</p>
+            <h1 class="doc-title">Privacy Policy del sito andreatropea.com</h1>
+            <p class="doc-meta">Resa all'interessato ai sensi dell'art. 13 GDPR · Ultimo aggiornamento: 7 agosto 2026</p>
+        </div>
+
+        <main class="doc-body">
+
+            <h2>1. Titolare del trattamento</h2>
+            <p>Il sito <strong>andreatropea.com</strong> (di seguito "Sito") è di proprietà ed è gestito da <strong>Ideas Incubator AG</strong> (per i dati societari v. punto 10), in qualità di Titolare del trattamento delle informazioni raccolte dagli utenti (di seguito "utente", "utenti" o "voi").</p>
+            <p>La presente informativa (o "privacy policy") è resa ai sensi dell'art. 13 del Regolamento generale UE sulla protezione dei dati (di seguito "GDPR") ed illustra le modalità di utilizzo, condivisione, accesso, modifica o cancellazione delle informazioni personali da voi fornite e trattate. L'informativa si ispira altresì alla Raccomandazione n. 2/2001 relativa ai requisiti minimi per la raccolta di dati on-line nell'Unione Europea, adottata il 17 maggio 2001 dal Gruppo di Lavoro Articolo 29.</p>
+            <p>Questa privacy policy è resa solo per questo Sito e non si applica ad altri siti web eventualmente consultati dall'utente tramite link presenti nelle pagine del Sito.</p>
+            <p>Titolare del trattamento dei dati degli utenti è <strong>Ideas Incubator AG</strong>, in persona del proprio rappresentante legale pro tempore, con sede in Stanserstrasse 100, 6373 Ennetbürgen (CH), email <a href="mailto:privacy@ideasincubator.ch">privacy@ideasincubator.ch</a>, tel. 0041 (0)78 899 79 5.</p>
+            <p>L'elenco aggiornato dei Responsabili del trattamento e delle persone incaricate del trattamento si trova presso la sede legale del Titolare del trattamento. Il Titolare del Trattamento, con valutazioni apposite ai sensi dell'art. 37 GDPR, ha escluso la necessità di procedere con la nomina di un Responsabile della Protezione dei Dati (DPO).</p>
+            <p>Le misure di sicurezza applicabili al presente Sito sono state definite e sviluppate per assicurare che le informazioni fornite dagli utenti siano trattate nel rispetto dei principi di liceità, correttezza, trasparenza, limitazione delle finalità e della conservazione, minimizzazione dei dati, esattezza, integrità e riservatezza, in conformità alle normative nazionali ed europee vigenti.</p>
+
+            <h2>2. Natura del Sito</h2>
+            <div class="callout">
+                <p>Questo Sito è una <strong>pagina informativa a contenuto statico</strong>. Pubblica lo storico delle sessioni operative e i relativi risultati.</p>
+                <p>Il Sito <strong>non contiene moduli di contatto o di iscrizione</strong>, non prevede registrazione né area riservata, non vende prodotti o servizi, non gestisce pagamenti e <strong>non utilizza cookie né strumenti di analisi o profilazione</strong> (v. la <a href="../cookie-policy/">Cookie Policy</a>).</p>
+            </div>
+
+            <h2>3. Dati personali oggetto del trattamento</h2>
+            <p>Per "Dati Personali" si intende qualsiasi informazione riguardante una persona fisica identificata o identificabile con particolare riferimento a un identificativo come il nome, un numero di identificazione, dati relativi all'ubicazione o un identificativo online.</p>
+            <p>I Dati Personali trattati tramite il Sito sono i seguenti:</p>
+
+            <h3>A) Dati di navigazione</h3>
+            <p>I sistemi informatici e le procedure software preposte per il corretto funzionamento del Sito acquisiscono, nel corso del loro normale esercizio, alcuni Dati Personali la cui trasmissione è implicita nella navigazione dei siti web. Queste informazioni non sono raccolte per essere associate a interessati identificati; tuttavia, per loro stessa natura potrebbero, attraverso elaborazioni ed associazioni con dati detenuti da terzi, permettere di identificare gli utenti. Fra essi rientrano gli indirizzi IP o i nomi dei computer utilizzati dagli utenti che si connettono al Sito, gli indirizzi URI (Uniform Resource Identifier) delle risorse richieste, l'orario della richiesta, il metodo utilizzato nel sottoporre la richiesta al server, la dimensione del file ottenuto in risposta, il codice numerico indicante lo stato della risposta data dal server ed altri parametri relativi al sistema operativo e alla piattaforma informatica adoperata dall'utente.</p>
+            <p>I dati di cui sopra vengono utilizzati al solo fine di ricavare informazioni statistiche anonime sull'uso del Sito e per controllarne il corretto funzionamento. I dati potrebbero essere utilizzati per l'accertamento di responsabilità in caso di ipotetici reati informatici ai danni del Sito.</p>
+            <p>Il Sito è ospitato su <strong>GitHub Pages</strong> (GitHub, Inc.), che in qualità di fornitore di hosting può registrare tali dati di navigazione nei propri log tecnici, secondo le proprie politiche.</p>
+
+            <h3>B) Dati forniti volontariamente dall'utente</h3>
+            <p>Il Sito <strong>non espone moduli</strong> attraverso i quali l'utente possa comunicare i propri dati. Qualora l'utente scelga di scrivere spontaneamente agli indirizzi e-mail indicati in questa informativa, i dati contenuti nel messaggio (indirizzo del mittente ed eventuali altri dati personali riportati) saranno trattati al solo fine di dare riscontro alla richiesta e conservati per il tempo strettamente necessario a tale scopo.</p>
+
+            <h3>C) Cookie</h3>
+            <p>Questo Sito <strong>non utilizza cookie</strong>, né propri né di terze parti, e non impiega tecnologie equivalenti di tracciamento (web beacon, fingerprinting, archiviazione locale a fini di profilazione). Per tutti i dettagli si rinvia all'apposita <a href="../cookie-policy/">Cookie Policy</a>.</p>
+
+            <h2>4. Servizi di terze parti richiamati dalle pagine</h2>
+            <p>Per funzionare, alcune pagine del Sito richiamano risorse ospitate su server di terze parti. In questi casi, per la natura stessa del protocollo HTTP, l'<strong>indirizzo IP</strong> dell'utente e le informazioni tecniche del browser vengono necessariamente comunicati al fornitore della risorsa. Nessuno di questi servizi installa cookie sul Sito né riceve dati identificativi forniti dall'utente.</p>
+            <div class="tbl-scroll">
+                <table>
+                    <thead>
+                        <tr><th>Servizio</th><th>Fornitore</th><th>A cosa serve</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Google Fonts</td><td>Google Ireland Ltd. / Google LLC</td><td>Caricamento dei caratteri tipografici usati dalle pagine.</td></tr>
+                        <tr><td>cdnjs</td><td>Cloudflare, Inc.</td><td>Caricamento della libreria software che disegna il grafico.</td></tr>
+                        <tr><td>Google Sheets</td><td>Google Ireland Ltd. / Google LLC</td><td>Lettura del foglio pubblico da cui provengono i dati delle sessioni mostrate.</td></tr>
+                        <tr><td>GitHub Pages</td><td>GitHub, Inc.</td><td>Hosting del Sito.</td></tr>
+                        <tr><td>YouTube</td><td>Google Ireland Ltd. / Google LLC</td><td>Solo collegamenti in uscita: nessun video è incorporato nelle pagine. Il contatto con YouTube avviene unicamente se l'utente clicca sul link.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Alcuni di questi fornitori hanno sede o infrastrutture in Paesi terzi rispetto allo Spazio Economico Europeo: v. il punto 8.</p>
+
+            <h2>5. Finalità e base giuridica del trattamento dei dati</h2>
+            <p>I Dati Personali trattati attraverso il Sito lo sono dal Titolare per le seguenti finalità:</p>
+            <ul>
+                <li><strong>a)</strong> finalità inerenti la corretta erogazione e visualizzazione dei contenuti disponibili attraverso il Sito;</li>
+                <li><strong>b)</strong> finalità di ricerche/analisi statistiche su dati aggregati o anonimi, senza dunque possibilità di identificare l'utente, volte a misurare il funzionamento del Sito e le relative funzioni operative, compresa la risoluzione di qualsiasi problema tecnico;</li>
+                <li><strong>c)</strong> finalità volte ad impedire o prevenire attività fraudolente o un uso improprio che possa danneggiare il Sito di Ideas Incubator AG, o compromettere la sicurezza delle operazioni;</li>
+                <li><strong>d)</strong> finalità relative all'adempimento di un obbligo legale al quale Ideas Incubator AG è soggetta;</li>
+                <li><strong>e)</strong> finalità necessarie ad accertare, esercitare o difendere un diritto in sede giudiziaria o ogniqualvolta le autorità giurisdizionali esercitino le loro funzioni giurisdizionali.</li>
+            </ul>
+            <p>La base legale del trattamento per la finalità di cui al punto a) è l'erogazione di un servizio o il riscontro ad una richiesta, le quali non richiedono il consenso degli utenti ai sensi della normativa applicabile. La finalità di cui al punto b) non comporta il trattamento di Dati Personali, mentre per quanto attiene alle finalità di cui ai punti c) ed e) il trattamento risulta necessario per il perseguimento di un legittimo interesse di Ideas Incubator AG. Infine, la finalità di cui al punto d) rappresenta un trattamento legittimo di Dati Personali in quanto necessario per adempiere ad un obbligo di legge a cui Ideas Incubator AG è soggetta.</p>
+            <p>Il Sito <strong>non svolge alcun trattamento per finalità di marketing</strong> e non richiede pertanto alcun consenso a tale scopo.</p>
+
+            <h2>6. Rifiuto da parte dell'utente a fornire i propri dati personali</h2>
+            <p>Il conferimento dei Dati Personali da parte dell'utente è <strong>facoltativo</strong>. Poiché il Sito non espone moduli, la semplice consultazione delle pagine non richiede all'utente di fornire alcun dato: l'unico conferimento possibile è quello spontaneo descritto al punto 3.B, il cui mancato conferimento comporta unicamente l'impossibilità di dare riscontro alla richiesta.</p>
+            <p>Attraverso il Sito non chiediamo all'utente dati di natura sensibile (es. relativi a rilevare l'origine razziale ed etnica, le convinzioni religiose, filosofiche, politiche ecc.) né giudiziaria (dati in materia di casellario giudiziale, o afferenti la qualità di imputato o di indagato).</p>
+
+            <h2>7. Modalità, logiche del trattamento e tempi di conservazione</h2>
+            <p>Il trattamento delle informazioni degli utenti è effettuato solo se strettamente necessario, anche con l'ausilio di mezzi elettronici o comunque automatizzati, ed è svolto da Ideas Incubator AG e/o da terzi di cui Ideas Incubator AG può avvalersi per memorizzare, gestire e trasmettere i dati stessi.</p>
+            <p>Il trattamento sarà effettuato con logiche di organizzazione ed elaborazione dei Dati Personali, anche relativi ai log originati dall'accesso ed utilizzo dei servizi resi disponibili via web, correlate alle finalità sopra indicate e, comunque, in modo da garantire la sicurezza e la riservatezza dei dati.</p>
+            <p>I Dati Personali trattati verranno conservati per i tempi massimi di conservazione previsti dal GDPR e dalla normativa nel tempo applicabile e, in ogni caso, per la durata strettamente necessaria al conseguimento delle finalità indicate. Maggiori dettagli in merito al periodo di conservazione dei Dati Personali e/o ai criteri utilizzati per determinare tale periodo possono essere richiesti scrivendo al Titolare del trattamento (v. punto 10).</p>
+
+            <h2>8. Comunicazione e trasferimento dei dati</h2>
+            <p>Ideas Incubator AG non venderà, divulgherà o distribuirà dati personali a Terze Parti ad eccezione di quanto specificato nella presente informativa.</p>
+            <p>I Dati Personali dell'utente potranno essere condivisi con dipendenti e consulenti autorizzati a gestire il Sito e prestare i relativi servizi (es. gestione dei sistemi informatici), nella qualità di incaricati e/o responsabili del trattamento, nonché con i fornitori indicati al punto 4, in qualità di responsabili del trattamento esterni o di autonomi titolari secondo il ruolo da ciascuno rivestito.</p>
+            <p>Le Parti alle quali Ideas Incubator AG può trasferire dati personali dell'utente possono in alcuni casi trovarsi in un Paese Terzo rispetto all'Unione Europea, per tale intendendosi un Paese sito al di fuori dello Spazio Economico Europeo (SEE). Ciò significa che i dati personali possono essere trasferiti in Paesi non soggetti alle disposizioni del GDPR. In questi casi Ideas Incubator AG, ove si tratti di Paese Terzo non riconosciuto come "adeguato" dalla Commissione Europea, si è impegnata ad adottare misure adeguate a garantire che i dati personali continuino ad essere protetti e trattati nel rispetto delle disposizioni del GDPR, mediante la stipula di clausole contrattuali standard o di accordi equivalenti sottoscritti da entrambe le Parti.</p>
+            <p>Si segnala che la <strong>Svizzera</strong>, sede del Titolare, è Paese riconosciuto come adeguato dalla Commissione Europea.</p>
+            <p>Le informazioni dell'utente potranno inoltre essere comunicate ai seguenti soggetti o categorie di soggetti: forze di polizia, forze armate ed altre amministrazioni pubbliche al fine di adempiere gli obblighi previsti da leggi, regolamenti, protocolli e dalla normativa nazionale o europea; agenzie o professionisti per la difesa in giudizio di Ideas Incubator AG. Le parti menzionate tratteranno le informazioni in qualità di autonomi Titolari del trattamento.</p>
+
+            <h2>9. Dati di utenti minori di età</h2>
+            <p>Il Sito non è rivolto a minori di anni 18 e Ideas Incubator AG non raccoglie volutamente Dati Personali dagli stessi. Nel caso di registrazione accidentale di qualsiasi informazione su minori, Ideas Incubator AG provvederà a cancellarle in modo tempestivo su richiesta degli utenti.</p>
+
+            <h2>10. Diritti dell'utente e contatti</h2>
+            <p>Gli artt. 15 e seguenti del GDPR conferiscono agli utenti l'esercizio di specifici diritti nei confronti del Titolare del trattamento. In particolare l'utente potrà:</p>
+            <ul>
+                <li>ottenere la conferma dell'esistenza e l'accesso ai Dati Personali che lo riguardano, anche se non ancora registrati, e chiedere di conoscere la loro origine, nonché le finalità, i tempi di conservazione, le modalità del trattamento e la logica applicata in caso di trattamenti effettuati con strumenti automatizzati;</li>
+                <li>revocare il consenso eventualmente prestato relativamente al trattamento dei suoi Dati Personali, fatta salva la liceità del trattamento posto in essere fino a quel momento;</li>
+                <li>ricevere in un formato strutturato, di uso comune e leggibile da dispositivo automatico i Dati Personali trattati e, salvo il caso in cui non sia tecnicamente fattibile, trasmettere direttamente i suoi dati ad un altro Titolare del trattamento;</li>
+                <li>ottenere la cancellazione, la trasformazione in forma anonima o il blocco dei dati di cui non è necessaria la conservazione in relazione agli scopi per i quali i dati sono stati raccolti e trattati;</li>
+                <li>ottenere l'aggiornamento, la rettificazione e l'integrazione dei dati trattati;</li>
+                <li>opporsi, in tutto o in parte, per motivi legittimi, al trattamento dei dati personali che lo riguardano, ancorché pertinenti allo scopo della raccolta;</li>
+                <li>proporre reclamo alle Autorità di controllo.</li>
+            </ul>
+            <p>L'esercizio di questi diritti non deve pregiudicare e/o ledere i diritti e le libertà altrui.</p>
+            <div class="callout">
+                <p><strong>Ideas Incubator AG</strong><br>
+                Stanserstrasse 100, 6373 Ennetbürgen (CH)<br>
+                CHE-114.536.253<br>
+                E-mail: <a href="mailto:privacy@ideasincubator.ch">privacy@ideasincubator.ch</a> · Tel. 0041 (0)78 899 79 5</p>
+            </div>
+            <p>Resta inteso che, laddove le richieste siano presentate tramite mezzi elettronici, le informazioni saranno fornite gratuitamente e in un formato elettronico di uso comune. Qualora le richieste dell'utente siano manifestamente infondate o eccessive, in particolare per il loro carattere ripetitivo, Ideas Incubator AG può alternativamente addebitare un contributo spese ragionevole tenendo conto dei costi amministrativi sostenuti, oppure rifiutare di soddisfare la richiesta; in entrambe le circostanze il Titolare fornisce un'adeguata giustificazione all'utente.</p>
+
+            <h2>11. Modifiche all'informativa sulla privacy</h2>
+            <p>Ideas Incubator AG si riserva di modificarne o semplicemente aggiornarne il contenuto, in parte o completamente, anche a causa di variazioni della normativa applicabile. Consigliamo quindi di controllare regolarmente questa sezione per prendere cognizione della più recente ed aggiornata versione della privacy policy, in modo che l'utente sia sempre aggiornato sui dati raccolti e sull'uso che ne fa Ideas Incubator AG. Nel caso in cui Ideas Incubator AG apporti modifiche che si ritengano importanti, gli utenti saranno informati mediante il Sito.</p>
+
+            <p class="doc-meta" style="margin-top:32px;">Ultimo aggiornamento: 7 agosto 2026</p>
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-legal">
+                <p class="footer-entity">Ideas Incubator AG - Stanserstrasse, 100 6373 Ennetbürgen - CHE-114.536.253 - <a href="../privacy-policy/">Privacy Policy</a> - <a href="../termini-e-condizioni/">Termini e condizioni</a> - <a href="../cookie-policy/">Cookie Privacy</a></p>
+                <p class="footer-disclaimer">Questo sito non fa parte del sito Facebook, Google, Youtube, o Facebook Inc, Google Inc, Youtube Inc. Inoltre, questo sito NON è approvato da Facebook, Google, Youtube in alcun modo. FACEBOOK è un marchio registrato di FACEBOOK, Inc, Youtube è un marchio registrato di Google Inc.</p>
+                <p class="footer-disclaimer">DISCLAIMER — Le informazioni, analisi, esempi operativi e contenuti presenti su questo sito sono forniti esclusivamente a scopo educativo e informativo e non costituiscono consulenza finanziaria, raccomandazioni personalizzate né gestione di portafogli o capitali di terzi. Ogni operazione mostrata o descritta rappresenta esclusivamente operatività personale a fini dimostrativi. Il trading sui mercati finanziari comporta rischi elevati, inclusa la possibilità di perdita totale o parziale del capitale investito. Le performance passate non garantiscono risultati futuri. Ogni utente è responsabile in modo autonomo delle proprie decisioni di investimento e della valutazione del proprio profilo di rischio. Il titolare del sito non si assume alcuna responsabilità per eventuali perdite o danni derivanti dall'utilizzo delle informazioni o degli strumenti forniti.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
