@@ -880,7 +880,11 @@ function setupReveal() {
     }
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    // threshold 0 + margine positivo = il blocco si accende 200 px PRIMA di
+    // entrare nello schermo. Col 10% di prima, la tabella (alta 6.500 px)
+    // aspettava che se ne vedessero 650: ci si arrivava sopra e solo allora
+    // cominciava ad apparire.
+    }, { threshold: 0, rootMargin: '0px 0px 200px 0px' });
     tutti.forEach(el => observer.observe(el));
 }
 
