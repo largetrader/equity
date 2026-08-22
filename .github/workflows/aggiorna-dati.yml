@@ -1,0 +1,39 @@
+name: Aggiorna i risultati nella pagina
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: aggiorna-dati
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rileggi il foglio e riscrivi index.html
+        run: python3 aggiorna.py index.html
+
+      - name: Pubblica, ma solo se e' cambiato qualcosa
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "Il foglio non e' cambiato: non tocco niente."
+            exit 0
+          fi
+          git config user.name  "Aggiornamento risultati"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Aggiorna i risultati dal foglio"
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
