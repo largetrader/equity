@@ -319,7 +319,12 @@
             display: flex; align-items: center; justify-content: space-between;
             margin-bottom: 14px; flex-wrap: wrap; gap: 12px;
         }
-        .table-count { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+        .table-count { display: none; }
+        .table-controls { justify-content: flex-end; }
+        .track-title {
+            font-size: clamp(30px, 4.5vw, 44px); font-weight: 800;
+            letter-spacing: -0.02em; color: var(--text-primary); margin-bottom: 14px;
+        }
         .table-filters { display: flex; gap: 6px; }
         .filter-btn {
             font-family: var(--font-mono); font-size: 11px; font-weight: 600;
@@ -635,6 +640,7 @@
                 <h2 class="section-title">Storico Sessioni</h2>
             </div>
             <div class="video-box reveal" id="video-storico"><p class="video-caption">Vuoi vedere tutti i video? Ogni sessione qui sotto ha il suo, con il risultato reale. Clicca "Video" sulla riga.</p></div>
+            <h3 class="track-title reveal">Track Record</h3>
             <p class="method-note reveal">Operazioni eseguite su conto reale, in CFD sul Nasdaq, tramite Skilling. Risultati espressi in punti indice, al lordo dello spread (il broker non applica commissioni). I punti indice non sono un rendimento: il risultato in denaro dipende dalla size e dal conto di ciascuno. Periodo: dal 1° marzo 2026 all'ultima data in tabella.</p>
             <div>
                 <div class="table-controls">
