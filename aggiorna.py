@@ -43,6 +43,12 @@ def leggi_csv(testo):
         for i, h in enumerate(intest):
             k = {'p/l': 'pl', 'win rate': 'rr'}.get(h, h)
             r[k] = vals[i] if i < len(vals) else ''
+        # «IF» davanti alla data = operazione Intraflow (come fa la pagina)
+        r['sistema'] = ''
+        m = re.match(r'^\s*IF\s*(.*)$', r.get('data', ''), re.I)
+        if m:
+            r['sistema'] = 'IF'
+            r['data'] = m.group(1).strip()
         if r.get('data'):
             fuori.append(r)
     return fuori
@@ -125,9 +131,10 @@ def righe_html(sessioni, filtro='all'):
         cella = ('<a href="%s" target="_blank" rel="noopener noreferrer" class="video-btn">%sVideo</a>'
                  % (esc(video), ICONA)) if indirizzo_buono(video) else '<span class="no-video">\u2014</span>'
 
+        e_if = s.get('sistema') == 'IF'
         out.append(
-            '<tr>'
-            '<td class="entry-val">%s</td>'
+            '<tr%s>'
+            '<td class="entry-val">%s%s</td>'
             '<td><span class="%s">%s</span></td>'
             '<td class="entry-val">%s</td>'
             '<td class="stop-val">%s</td>'
@@ -138,7 +145,9 @@ def righe_html(sessioni, filtro='all'):
             '<td><span class="%s">%s</span></td>'
             '<td>%s</td>'
             '</tr>' % (
-                esc(data_it(s.get('data', ''))), cl_dir, esc(txt_dir),
+                ' class="riga-if"' if e_if else '',
+                esc(data_it(s.get('data', ''))),
+                '<span class="badge-if" title="Intraflow">IF</span>' if e_if else '', cl_dir, esc(txt_dir),
                 esc(s.get('entrata') or '\u2014'), esc(s.get('stop') or '\u2014'),
                 esc(s.get('uscita') or '\u2014'), esc(mae), cl_pl, esc(txt_pl),
                 esc(rr), cl_es, esc(es or '\u2014'), cella))
