@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Iscrizione confermata · Il Nasdaq è servito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{--night:#0a1a40;--black:#050d24;--paper:#f4f7fc;--white:#fff;--gold:#3d8bff;--gold-hover:#6aa8ff;--muted:#b9c4d6;--line:rgba(61,139,255,.45);--serif:'Playfair Display',Georgia,serif;--sans:'Instrument Sans',Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{overflow-x:clip}
+body{margin:0;background:var(--black);color:var(--paper);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--gold);color:var(--black)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;font-style:normal;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.wrap{width:min(1100px,calc(100% - 48px));margin:0 auto}
+.accent{color:var(--gold)}
+
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:56px;align-items:center;padding:64px 0 56px}
+.status{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+.status svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:2}
+.hero h1{font-size:clamp(42px,5.4vw,72px);line-height:1.02;margin-top:18px}
+.hero .lead{margin-top:22px;font-size:18px;max-width:46ch}
+.hero .lead strong{color:var(--white)}
+.when{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);background:var(--night)}
+.when>div{padding:18px 16px;border-right:1px solid var(--line);min-width:0}
+.when>div:last-child{border-right:0}
+.when span{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.when strong{display:block;margin-top:6px;font:400 24px/1.2 var(--serif);color:var(--white)}
+.side-note{margin-top:14px;font-size:14px;color:var(--muted)}
+
+.block{padding:56px 0;border-top:1px solid var(--line)}
+.block-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.block h2{font-size:clamp(32px,3.4vw,46px);line-height:1.08}
+.block .intro{margin-top:14px;color:var(--muted);max-width:40ch}
+.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.steps b{font:400 28px/1 var(--serif);color:var(--gold)}
+.steps h3{font-size:22px;margin-bottom:6px;color:var(--white)}
+.steps p{color:var(--muted);font-size:15px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;background:var(--gold);color:var(--black);border:1px solid var(--gold);font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s}
+.button:hover{background:var(--gold-hover)}
+.button.ghost{background:transparent;color:var(--paper)}
+.button.ghost:hover{background:var(--night)}
+.button svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.fine{margin-top:12px;font-size:13px;color:var(--muted)}
+
+.footer{padding:40px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:12.5px;line-height:1.7}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:18px}
+.brand{font:400 20px var(--serif);letter-spacing:.12em;color:var(--paper);text-decoration:none}
+.footer nav{display:flex;gap:20px;flex-wrap:wrap}
+.footer nav a{text-decoration:none;white-space:nowrap}
+.footer nav a:hover{color:var(--gold)}
+.legal{display:grid;gap:12px;margin-top:14px}
+.legal strong{color:var(--paper)}
+
+@media (max-width:900px){
+ .hero,.block-grid{grid-template-columns:minmax(0,1fr);gap:28px}
+ .hero{padding:40px 0}
+}
+@media (max-width:520px){
+ .wrap{width:calc(100% - 32px)}
+ .when>div{padding:14px 10px}
+ .when strong{font-size:17px;overflow-wrap:anywhere}
+ .when span{font-size:11px;letter-spacing:.08em}
+ .actions .button{width:100%}
+ .steps li{grid-template-columns:32px minmax(0,1fr);gap:12px}
+}
+
+@media (min-width:901px){.hero{grid-template-columns:minmax(0,1fr);gap:32px}.hero>div:last-child{max-width:640px}.when strong{white-space:nowrap}}
+
+/* palette blu dalla locandina */
+body{background:radial-gradient(1100px 650px at 85% -5%,rgba(40,110,255,.35),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(23,71,168,.25),transparent 60%),linear-gradient(180deg,#071a4a 0%,#050d24 55%,#040a1c 100%) fixed;background-color:#050d24}
+.accent,.hero h1 .accent{color:#5aa2ff}
+.wa{color:#25d366}
+.btn-wa{background:#25d366;border-color:#25d366;color:#04140a}.btn-wa:hover{background:#3fe07d;border-color:#3fe07d}
+</style>
+</head>
+<body>
+<main>
+<section class="wrap hero" aria-labelledby="titolo">
+ <div>
+  <p class="status"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>Iscrizione confermata</p>
+  <h1 id="titolo">Il tuo posto è <span class="accent">riservato.</span><br>Ora guarda <span class="wa">WhatsApp.</span></h1>
+  <p class="lead">Il link per collegarti arriva su <strong>WhatsApp</strong>, al numero che hai indicato nel modulo. Conserva quel messaggio: è da lì che entri nel webinar con Andrea Tropea.</p>
+ </div>
+ <div>
+  <div class="when">
+   <div><span>Martedì</span><strong>24 novembre</strong></div>
+   <div><span>Alle</span><strong>21:00</strong></div>
+   <div><span>Dove</span><strong>Online · gratuito</strong></div>
+  </div>
+  <p class="side-note">Ora italiana. Il webinar dura circa un’ora.</p>
+ </div>
+</section>
+
+<section class="block" aria-labelledby="link-title">
+ <div class="wrap block-grid">
+  <div>
+   <h2 id="link-title">Tutto passa<br>da <span class="wa">WhatsApp.</span></h2>
+   <p class="intro">Non serve iscriversi di nuovo: il link è legato al numero che hai lasciato.</p>
+  </div>
+  <div>
+   <ol class="steps">
+    <li><b>1</b><div><h3>Controlla i messaggi</h3><p>Cerca il messaggio con il link de Il Nasdaq è servito sul numero che hai usato per iscriverti.</p></div></li>
+    <li><b>2</b><div><h3>Se non lo trovi, scrivici</h3><p>Se dopo qualche minuto non è arrivato, o se il numero era sbagliato, ti aiutiamo noi.</p></div></li>
+   </ol>
+   <div class="actions">
+    <a class="button btn-wa" href="https://wa.me/41782014278?text=Vorrei%20il%20Link%20per%20il%20webinar%20Il%20Nasdaq%20%C3%A8%20Servito" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.9L3 21l1.2-4.4A9 9 0 1 1 21 12z"/></svg>Non ho ricevuto il link</a>
+   </div>
+   <p class="fine">Si apre WhatsApp con il messaggio già scritto: premi Invia.</p>
+  </div>
+ </div>
+</section>
+
+<section class="block" aria-labelledby="cal-title">
+ <div class="wrap block-grid">
+  <div>
+   <h2 id="cal-title">Martedì sera.<br><span class="accent">Salvalo in calendario.</span></h2>
+   <p class="intro">Martedì 24 novembre, dalle 21:00 alle 22:00. Collegati qualche minuto prima.</p>
+  </div>
+  <div>
+   <div class="actions">
+    <a class="button" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Il%20Nasdaq%20%C3%A8%20servito%20%E2%80%94%20webinar%20con%20Andrea%20Tropea&amp;dates=20261124T200000Z/20261124T210000Z&amp;details=Webinar%20gratuito%20online%20con%20Andrea%20Tropea.%20Il%20link%20per%20collegarti%20arriva%20su%20WhatsApp.&amp;location=Online" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Google Calendar</a>
+    <a class="button ghost" href="il-nasdaq-e-servito.ics" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>Apple / Outlook (.ics)</a>
+   </div>
+   <p class="fine">Il promemoria arriva 30 minuti prima dell’inizio.</p>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="wrap footer">
+ <div class="footer-top"><span class="brand">ANDREA TROPEA</span><nav aria-label="Pagine legali"><a href="/privacy-policy/">Privacy Policy</a><a href="/cookie-policy/">Cookie Policy</a><a href="/termini-e-condizioni/">Termini e condizioni</a></nav></div>
+ <p>Ideas Incubator AG · Stanserstrasse 100 · 6373 Ennetbürgen · CHE-114.536.253</p>
+ <div class="legal">
+  <p><strong>Avvertenza sul rischio.</strong> Il trading e l’investimento in strumenti finanziari comportano un rischio elevato di perdita, anche totale, del capitale impiegato. Valuta con attenzione se questa attività è adatta alla tua situazione e, se hai dubbi, rivolgiti a un consulente abilitato.</p>
+  <p><strong>Natura del servizio.</strong> Il webinar Il Nasdaq è servito ha finalità esclusivamente didattiche e informative e non costituisce consulenza in materia di investimenti. Non serve aprire un conto né investire denaro per partecipare. I risultati passati non garantiscono risultati futuri: nessun rendimento è promesso o implicito.</p>
+ </div>
+</footer>
+</body>
+</html>

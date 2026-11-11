@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Andrea Tropea//Il Nasdaq e servito//IT
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:il-nasdaq-e-servito-20261124@andreatropea.com
+DTSTAMP:20261111T120000Z
+DTSTART:20261124T200000Z
+DTEND:20261124T210000Z
+SUMMARY:Il Nasdaq è servito — webinar con Andrea Tropea
+DESCRIPTION:Webinar gratuito online con Andrea Tropea. Il link per collegarti arriva su WhatsApp al numero indicato nell'iscrizione.
+LOCATION:Online
+BEGIN:VALARM
+TRIGGER:-PT30M
+ACTION:DISPLAY
+DESCRIPTION:Tra 30 minuti: Il Nasdaq è servito
+END:VALARM
+END:VEVENT
+END:VCALENDAR

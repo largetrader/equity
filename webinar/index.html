@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scalping Open Flow — Andrea Tropea</title>
+<meta name="description" content="La lettura del Nasdaq prima dell’apertura americana. Scopri Scalping Open Flow con Andrea Tropea.">
+<!-- CONSEGNA SVILUPPATORE
+File autonomo: CSS, JS e fotografia incorporati. Nessuna libreria o CDN richiesta.
+In assenza del file viene usato Georgia: non è CoFo Raffine.
+VIDEO: impostare VIDEO_URL nello script in fondo con il nuovo MP4 definitivo.
+La hero è una fotografia finché VIDEO_URL è vuoto: nessun vecchio video sostitutivo.
+La scheda è un esempio statico, non un feed live. Aggiornare dati nel markup.
+Orari: orario Italia standard del servizio; verificare gli scostamenti stagionali USA/Europa.
+Ricettario costruito in CSS: metafora visiva del videocorso, non prodotto cartaceo.
+Prima della pubblicazione verificare testi, contatti, calendario e note legali con il cliente.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+
+
+:root{--night:#0a1a40;--black:#050d24;--paper:#f4f7fc;--gold:#3d8bff;--muted:#b9c4d6;--line:rgba(61,139,255,.45);--serif:'Playfair Display',Georgia,serif;--sans:'Instrument Sans',Arial,sans-serif;--gold-hover:#6aa8ff;--gold-deep:#2a6fe0;--gold-ink:#1f5fd1;--ink:#0b1530;--card:#f4f7fc;--field:#071331;--field-line:#24365e;--error:#e8a0a0;--video-bg:#050d24;--overlay:#0a1a4080}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--black);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.65}a{color:inherit;text-underline-offset:5px}button{font:inherit}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--gold);outline-offset:6px}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:400;font-style:normal;line-height:1.06}h1{font-size:clamp(58px,6.8vw,100px);letter-spacing:-.045em}h2{font-size:clamp(36px,4vw,58px);letter-spacing:-.035em}h3{font-size:27px}p+p{margin-top:16px}.wrap{width:min(1240px,calc(100% - 80px));margin:auto}.eyebrow{font-size:11px;letter-spacing:.21em;text-transform:uppercase;font-weight:600}.gold{color:var(--gold)}.skip{position:fixed;top:-100px;left:20px;padding:10px;background:var(--paper);color:var(--black);z-index:20}.skip:focus{top:12px}.masthead{padding:26px 0 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:4px double var(--gold);gap:20px}.brand{text-decoration:none;font-family:var(--serif);font-size:25px;letter-spacing:.15em}.masthead span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}.hero{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center;padding:72px 0}.hero h1{margin:26px 0}.hero h1 .accent{color:var(--gold)}.intro{max-width:430px;font-size:20px;line-height:1.55}.benefits{display:grid;gap:12px;list-style:none;padding:0;margin:30px 0}.benefits li{display:flex;gap:15px;align-items:center}.icon{width:26px;height:26px;stroke:var(--gold);stroke-width:1.5;fill:none;flex-shrink:0}.button{display:inline-flex;justify-content:center;align-items:center;text-decoration:none;background:var(--gold);color:var(--black);padding:16px 27px;font-weight:700;border:1px solid var(--gold);min-height:52px;transition:background .2s,transform .2s;cursor:pointer}.button:hover{background:var(--gold-hover);transform:translateY(-2px)}.outline{background:transparent;color:var(--paper);font-size:14px}.outline:hover{background:rgba(61,139,255,.15)}.secondary{display:block;width:fit-content;margin-top:17px;font-size:14px}.hero-media{margin:0;position:relative;min-width:0}.hero-photo{display:block;width:100%;height:590px;object-fit:cover;object-position:49% center}.hero-media figcaption{position:absolute;bottom:0;left:0;right:0;padding:38px 22px 16px;background:linear-gradient(transparent,rgba(5,13,36,.82));font-size:12px;letter-spacing:.08em}.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid var(--paper);border-radius:50%;width:80px;height:80px;background:var(--overlay);color:var(--paper);cursor:pointer;font-size:27px}.play[hidden]{display:none}.trust{background-color:var(--night);background-image:linear-gradient(#3d8bff08 1px,transparent 1px),linear-gradient(90deg,#3d8bff08 1px,transparent 1px);background-size:22px 22px;border-block:1px solid var(--line);padding:32px 0}.trust .wrap{display:grid;grid-template-columns:1fr 1.2fr auto;gap:28px;align-items:center}.trust h2{font-size:35px}.trust p{border-left:1px solid var(--gold);padding-left:28px;font-size:15px}.method{background:var(--paper);color:var(--night);padding:80px 0}.method-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.method h2{margin:24px 0 34px}.steps{list-style:none;margin:0;padding:0}.steps li{display:grid;grid-template-columns:32px 1fr;gap:17px;padding:23px 0;border-bottom:1px solid var(--line)}.steps li:last-child{border-bottom:0}.steps .number{font-family:var(--serif);color:var(--gold-deep);font-size:25px}.steps h3{font-size:24px;margin:0 0 9px}.steps p{font-size:14px;line-height:1.6}.ticket-board{position:relative;background:linear-gradient(120deg,#182735,#0b121b);padding:69px 30px 32px;box-shadow:0 8px 22px #050d241a}.rail{position:absolute;top:26px;left:18px;right:18px;height:25px;background:linear-gradient(#475058,#20262b);border:1px solid #62666a;box-shadow:0 3px 4px #0008}.rail:before,.rail:after{content:'•';position:absolute;top:-3px;color:var(--gold);font-size:22px}.rail:before{left:10px}.rail:after{right:10px}.clip{position:absolute;top:12px;left:calc(50% - 15px);width:30px;height:53px;border-radius:16px 16px 3px 3px;background:linear-gradient(90deg,#1f5fd1,#8fbcff 45%,#2a6fe0);z-index:2;box-shadow:1px 3px 3px #0005}.clip:before{content:'';position:absolute;top:8px;left:10px;width:10px;height:10px;border-radius:50%;background:#242627;border:2px solid #2a6fe0}.clip:after{content:'';position:absolute;width:62px;height:17px;background:linear-gradient(#9cc4ff,#1f5fd1);bottom:-3px;left:-16px;border-radius:4px;box-shadow:0 3px 4px #0006}.ticket{position:relative;background:var(--card);padding:30px 25px 28px;box-shadow:3px 7px 13px #0007;color:var(--ink)}.ticket:after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:8px;background:linear-gradient(135deg,#f4f7fc 25%,transparent 25%) -4px 0/8px 8px,linear-gradient(225deg,#f4f7fc 25%,transparent 25%) -4px 0/8px 8px}.ticket header{text-align:center}.ticket h3{font-size:clamp(29px,3vw,43px);margin:18px 0 8px}.ticket header p:last-child{font-size:13px}.ticket dl{margin:25px 0}.ticket dl>div{display:grid;grid-template-columns:1.15fr 1fr;gap:14px;border-top:1px solid #b9c4d6;padding:15px 0}.ticket dt{font:11px/1.6 'Courier New',monospace;letter-spacing:.035em;font-weight:bold}.ticket dd{margin:0;font-size:15px;line-height:1.5}.ticket dd strong{color:var(--gold-ink)}.ticket small{display:block;font-size:11px;font-style:italic;line-height:1.6}.schedule{padding:65px 0 20px;background:var(--night)}.section-heading{display:flex;align-items:center;gap:30px;text-align:center}.section-heading:before,.section-heading:after{content:'';height:1px;background:var(--gold);flex:1}.week{display:grid;grid-template-columns:repeat(5,1fr);margin:38px 0 25px}.day{text-align:center;padding:12px 15px;border-right:1px solid var(--line)}.day:last-child{border:0}.day .icon{margin-bottom:12px}.day h3{margin-bottom:14px;font-size:27px}.day p{font-size:14px;margin:5px 0}.day small{display:block;color:var(--muted);font-size:12px}.schedule-note{max-width:780px;margin:0 auto;color:var(--muted);text-align:center;font-size:12px}.course{background:var(--night);padding:55px 0 75px}.course-grid{border-top:1px solid var(--gold);padding-top:65px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}.book-stage{display:flex;justify-content:center;perspective:1200px;padding:20px 35px 30px}.book{position:relative;width:310px;min-height:410px;transform:rotate(-7deg) rotateY(-14deg);background:repeating-linear-gradient(0deg,#ffffff04 0 1px,transparent 1px 3px),#0d2256;border-radius:7px 3px 3px 7px;box-shadow:-12px 8px 0 #040b20,8px 22px 30px #0008;padding:22px;border-left:14px solid #08173d}.book:after{content:'';position:absolute;left:7px;right:0;bottom:-13px;height:13px;background:repeating-linear-gradient(#c9d3e3 0 1px,#f4f7fc 1px 3px);transform:skewX(-25deg);z-index:-1}.book-cover{border:3px double var(--gold);padding:22px 12px;text-align:center;min-height:365px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;gap:18px}.book-title{font:37px/1 var(--serif)}.book-subtitle{font:italic 19px/1.3 var(--serif)}.book-art{width:82px;height:80px;stroke:var(--gold);fill:none;stroke-width:1.4}.book-author{font:24px var(--serif)}.book-label{border:1px solid var(--gold);padding:7px;font-size:9px;letter-spacing:.15em}.bookmark{position:absolute;width:24px;height:52px;background:#9cc4ff;bottom:-49px;left:32px;clip-path:polygon(0 0,100% 0,100% 100%,50% 80%,0 100%)}.course-copy h2{margin:20px 0}.course-copy .duration{font-size:21px;margin-bottom:20px}.course-copy>p{color:var(--muted)}.course-copy .principle{display:flex;align-items:center;gap:15px;margin-top:28px;color:var(--paper)}.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:60px;padding-top:32px;border-top:1px solid var(--line)}.risk-grid h3{font-size:25px;margin-bottom:15px}.risk-grid p{font-size:14px;color:var(--muted)}.closing{background:var(--paper);color:var(--night);text-align:center;padding:66px 0}.closing p{max-width:690px;margin:23px auto 27px}.closing .secondary{margin:17px auto 0}.footer{padding:30px 0 40px}.footer-top{display:flex;justify-content:space-between;align-items:center;gap:25px;padding-top:18px;border-top:4px double var(--gold)}.footer .brand{font-size:18px}.footer nav{display:flex;gap:20px;font-size:12px}.company{font-size:11px;color:var(--muted);margin:20px 0}.legal{color:var(--muted);font-size:11px;line-height:1.7;display:grid;gap:13px}.legal p+p{margin:0}.legal strong{color:var(--paper)}dialog{border:1px solid var(--gold);background:var(--black);color:var(--paper);width:min(1000px,95vw);padding:18px}dialog::backdrop{background:#000d}dialog video{width:100%;max-height:75vh;display:block}.close{display:block;margin:0 0 14px auto;border:1px solid var(--gold);background:transparent;color:var(--paper);padding:8px 16px;cursor:pointer}
+@media(min-width:1500px){.hero-photo{height:640px}}
+@media(max-width:1000px){.wrap{width:calc(100% - 48px)}.hero{gap:28px}.hero-photo{height:540px}.trust .wrap{grid-template-columns:1fr 1fr}.trust .button{grid-column:2;justify-self:start}.method-grid{gap:35px}.ticket-board{padding-inline:18px}.ticket{padding-inline:18px}.course-grid{gap:35px}.week{gap:0}.day{padding-inline:8px}.day h3{font-size:23px}}
+@media(max-width:720px){.wrap{width:calc(100% - 40px)}.masthead{padding-top:20px}.brand{font-size:18px}.masthead span{font-size:14px}.hero{grid-template-columns:1fr;padding:42px 0;gap:30px}.hero h1{font-size:66px;margin:20px 0}.intro{font-size:18px}.hero-photo{height:auto;aspect-ratio:4/3;object-position:center}.hero-media{grid-row:2}.hero .button{width:100%}.trust .wrap{display:flex;flex-direction:column;align-items:flex-start;gap:18px}.trust p{border:0;padding:0}.method{padding:48px 0}.method-grid{grid-template-columns:1fr;gap:32px}.method h2{margin-bottom:20px}.ticket-board{max-width:480px;width:100%;margin:auto}.ticket h3{font-size:35px}.ticket dt{font-size:11px}.ticket dd{font-size:14px}.schedule{padding-top:45px}.section-heading{gap:13px}.section-heading h2{font-size:37px}.week{grid-template-columns:1fr;margin-top:26px}.day{border-right:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:32px 1fr 1.3fr;column-gap:12px;text-align:left;padding:20px 0;align-items:center}.day .icon{grid-column:1;grid-row:1/4;margin:0}.day h3{grid-column:2;grid-row:1/4;font-size:24px;margin:0}.day p,.day small{grid-column:3}.day p{font-size:13px;margin:0}.day small{font-size:11px}.schedule-note{text-align:left}.course{padding:25px 0 45px}.course-grid{grid-template-columns:1fr;padding-top:35px;gap:45px}.book-stage{padding:20px 12px 35px}.book{width:260px;min-height:360px}.book-cover{min-height:325px}.book-title{font-size:32px}.course-copy h2{font-size:43px}.risk-grid{grid-template-columns:1fr;gap:28px;margin-top:35px}.closing{padding:45px 0}.closing h2{font-size:43px}.footer-top{align-items:flex-start;flex-direction:column}.footer nav{flex-wrap:wrap}.legal{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+.hero{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:start;padding:56px 0 72px}
+.hero h1{margin:18px 0 16px}
+.hero .intro{font-size:18px}
+.when{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;margin:26px 0 22px;border:1px solid var(--line)}
+.when div{padding:12px 20px;border-right:1px solid var(--line)}.when div:last-child{border:0}
+.when span{display:block;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.when strong{font:400 22px/1.2 var(--serif);color:var(--gold)}
+.optin{display:grid;gap:12px;max-width:470px}
+.fld{display:grid;gap:5px}.fld label{font-size:12px;letter-spacing:.06em;color:var(--muted)}
+.fld input{font:inherit;color:var(--paper);background:var(--field);border:1px solid var(--field-line);padding:13px 14px;min-height:50px}
+.fld input:focus{outline:2px solid var(--gold);outline-offset:1px;border-color:var(--gold)}
+.consent{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:12px;line-height:1.5;color:var(--muted)}
+.consent input{margin:2px 0 0;accent-color:var(--gold);width:16px;height:16px}
+.button.full{width:100%;margin-top:6px;font-size:16px}
+.button:disabled{opacity:.6;cursor:wait;transform:none}
+.form-status{font-size:13px;color:var(--error)}
+.fine{margin-top:12px;font-size:12px;color:var(--muted)}
+.hero-media{position:sticky;top:24px;align-self:start;margin-top:40px}
+.hero-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--video-bg);border:1px solid var(--line)}
+.hero-media.playing figcaption,.hero-media.playing .play{display:none}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:36px 0 56px}.hero-media{position:static;margin-top:0}.when div{padding:10px 14px}.when strong{font-size:19px}.optin{max-width:none}}
+
+.text-link{font-size:14px;font-weight:600;color:var(--gold);white-space:nowrap}
+.secondary,.button{white-space:nowrap}
+.week{display:block;margin:34px 0 22px}
+.daily{display:flex;gap:14px;align-items:center;justify-content:center;font-size:16px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.live-days{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}
+.live-days li{padding:18px 10px;text-align:center;border-right:1px solid var(--line);color:var(--muted);font-size:13px}
+.live-days li:last-child{border:0}
+.live-days b{display:block;font:400 24px/1.2 var(--serif);color:var(--paper);margin-bottom:4px}
+.live-days li.live span{color:var(--gold);font-weight:600}
+.hero-media{position:relative}
+@supports (position:sticky){@media (min-width:901px){.hero-media{position:sticky}}}
+@media (max-width:900px){.hero-media{position:relative}}
+@media (max-width:720px){.daily{justify-content:flex-start;text-align:left}.live-days{grid-template-columns:1fr}.live-days li{display:flex;justify-content:space-between;align-items:baseline;border-right:0;border-bottom:1px solid var(--line);text-align:left;padding:12px 0}.live-days b{font-size:20px;margin:0}}
+html,body{overflow-x:clip}
+.brand{white-space:nowrap}@media (max-width:720px){.masthead span{font-size:11px;letter-spacing:.1em;white-space:nowrap}.brand{font-size:16px}}
+
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:56px;align-items:center;padding:40px 0 48px;min-height:0}
+.hero h1{line-height:.92;margin:0}
+.subtitle{margin-top:14px;font-size:13px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.hero .intro{margin-top:18px;font-size:18px;max-width:440px}
+.when{margin:22px 0 22px}
+.video-thumb{position:relative;display:block;width:min(100%,360px);padding:0;border:1px solid var(--line);background:var(--video-bg);cursor:pointer;color:var(--paper);text-align:left}
+.video-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;opacity:.85;transition:opacity .2s}
+.video-thumb:hover img{opacity:1}
+.play-icon{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;border:1px solid var(--paper);background:var(--overlay);display:grid;place-items:center;font-size:18px}
+.thumb-label{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;font-size:11px;letter-spacing:.08em;background:linear-gradient(transparent,var(--overlay))}
+.hero-form{background:var(--night);border:1px solid var(--line);padding:26px 26px 20px}
+.optin{gap:10px;max-width:none}
+.fld input{min-height:44px;padding:10px 12px}
+.consent{font-size:11px}
+.fine{margin-top:10px}
+.video-modal{width:min(1100px,calc(100% - 32px));padding:0;border:1px solid var(--line);background:var(--video-bg);overflow:visible}
+.video-modal::backdrop{background:var(--overlay);backdrop-filter:blur(2px)}
+.video-modal video{display:block;width:100%;aspect-ratio:16/9;background:var(--video-bg)}
+.modal-close{position:absolute;top:-44px;right:0;width:36px;height:36px;border:1px solid var(--paper);border-radius:50%;background:transparent;color:var(--paper);cursor:pointer}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:28px;padding:28px 0 48px}.hero-form{padding:20px 16px}.video-thumb{width:100%}}
+
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center;padding:36px 0 44px}
+.hero-form{margin-top:22px;max-width:480px}
+.hero-side .when{margin:0 0 14px;grid-template-columns:repeat(3,minmax(0,1fr));width:100%}
+.hero-side .video-thumb{width:100%}
+.play-icon{width:76px;height:76px;font-size:24px}
+@media (max-width:900px){.hero-form{max-width:none}}
+
+.hero h1{font-size:clamp(56px,5.6vw,84px)}
+.hero .intro{margin-top:12px;font-size:17px}
+.hero-form{margin-top:18px;padding:18px 20px 14px}
+.optin{grid-template-columns:1fr 1fr;gap:9px 12px}
+.optin .fld:nth-of-type(3),.optin .consent,.optin .button,.optin .form-status{grid-column:1/-1}
+.fld input{min-height:42px}
+.consent{line-height:1.4}
+.fine{margin-top:8px}
+.hero-side .when strong{font-size:19px;white-space:nowrap}
+@media (max-width:520px){.optin{grid-template-columns:1fr}}
+@media (max-width:900px){.hero{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 0 44px}.hero-form{max-width:none}}
+.optin{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.fld{min-width:0}.fld input{width:100%;box-sizing:border-box}
+.optin .button.full{width:100%;box-sizing:border-box}
+.hero h1{font-size:clamp(40px,4.3vw,66px);line-height:1;white-space:nowrap}
+@media (max-width:900px){.hero h1{white-space:normal;font-size:clamp(44px,12vw,66px)}}
+@media (max-width:520px){.optin{grid-template-columns:minmax(0,1fr)}}
+.hero-copy{container-type:inline-size}
+.hero-form{max-width:480px}
+@media (min-width:901px){.hero h1{font-size:calc(min(100cqi, 480px) / 7.65)}}
+
+/* impeccable polish: solo interfaccia */
+::selection{background:var(--gold);color:var(--black)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.when span{font-size:12px;letter-spacing:.12em}
+.book-label{font-size:11px;letter-spacing:.12em}
+.thumb-label{font-size:13px;letter-spacing:.02em}
+.ticket small,.ticket dt,.day small,.company,.legal{font-size:12.5px}
+.fld label{font-size:13px;letter-spacing:.02em}
+.fld label::after{content:" *";color:var(--gold)}
+.subtitle{letter-spacing:.12em}
+.consent{font-size:13px;line-height:1.5;grid-template-columns:22px 1fr;align-items:start;min-height:44px;padding:6px 0;cursor:pointer}
+.consent input{width:20px;height:20px;margin:1px 0 0;cursor:pointer}
+.form-status{font-size:14px}
+.form-status.ok{color:var(--gold);font-weight:600;padding:12px 14px;border:1px solid var(--gold);text-align:center}
+.optin.sent .button{opacity:.55;cursor:default}
+@media (max-width:900px){
+  .hero-copy,.hero-side{display:contents}
+  .hero{display:flex;flex-direction:column;align-items:stretch;gap:0}
+  .hero h1,.hero .subtitle,.hero .intro{order:1}
+  .hero-side .when{order:2;margin:20px 0 0}
+  .hero-form{order:3;margin-top:18px}
+  .hero-side .video-thumb{order:4;margin-top:24px}
+}
+
+@media (max-width:900px){
+  .hero-side .video-thumb{order:3;margin-top:20px}
+  .hero-form{order:4;margin-top:20px}
+}
+@media (max-width:520px){
+  .hero-side .when > div{min-width:0;padding-left:10px;padding-right:8px}
+  .hero-side .when strong{display:block;white-space:normal;font-size:17px;line-height:1.25;overflow-wrap:anywhere}
+  .hero-side .when span{font-size:11px;letter-spacing:.08em}
+}
+
+.book-label{white-space:nowrap;letter-spacing:.08em}
+@media (max-width:720px){.book{width:min(290px,100%);min-height:0}.book-cover{min-height:0;gap:14px;padding:20px 10px}.book-title{font-size:32px}.book-subtitle{font-size:17px}}
+
+.about{padding:72px 0;border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:56px;align-items:start}
+.about h2{font-size:clamp(34px,3.6vw,52px);line-height:1.05}
+.about h2 .accent{color:var(--gold)}
+.about-lead{font-size:18px;line-height:1.6;max-width:62ch}
+.about-list{margin:28px 0 0;border-top:1px solid var(--line)}
+.about-list div{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);gap:24px;padding:16px 0;border-bottom:1px solid var(--line)}
+.about-list dt{font:400 20px/1.3 var(--serif);color:var(--paper)}
+.about-list dd{margin:0;font-size:15px;line-height:1.6;color:var(--muted)}
+.about-note{margin-top:20px;font-size:13px;color:var(--muted)}
+@media (max-width:900px){.about{padding:52px 0}.about-grid{grid-template-columns:minmax(0,1fr);gap:24px}}
+@media (max-width:520px){.about-list div{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+.when strong{color:#fff}
+.when span{color:var(--gold)}
+
+/* palette blu dalla locandina */
+body{background:radial-gradient(1100px 650px at 85% -5%,rgba(40,110,255,.35),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(23,71,168,.25),transparent 60%),linear-gradient(180deg,#071a4a 0%,#050d24 55%,#040a1c 100%) fixed;background-color:#050d24}
+.accent,.hero h1 .accent{color:#5aa2ff}
+.schedule,.course{background:linear-gradient(180deg,#0a1a40 0%,#071331 100%)}
+.method,.closing{background:linear-gradient(180deg,#f4f7fc,#e6ecf5)}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenuto">Vai al contenuto</a>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="timer" viewBox="0 0 32 32"><circle cx="16" cy="18" r="11"/><path d="M12 2h8M16 2v5m8 1 3-3M16 11v8l4 3"/></symbol><symbol id="chart" viewBox="0 0 32 32"><path d="M4 27v-7m8 7V15m8 12V8m8 19V2"/></symbol><symbol id="shield" viewBox="0 0 32 32"><path d="m16 3 11 5v8c0 6-7 11-11 14C12 27 5 22 5 16V8Z"/><path d="m10 16 4 4 8-9"/></symbol><symbol id="check" viewBox="0 0 32 32"><path d="M27 17v11H4V4h19M10 14l7 7L30 5"/></symbol></svg>
+
+<main id="contenuto">
+<section class="wrap hero" id="iscrizione" aria-labelledby="hero-title">
+<div class="hero-copy">
+<h1 id="hero-title">Il Nasdaq è <span class="accent">servito.</span></h1>
+<p class="subtitle">Scalping Open Flow · con Andrea Tropea</p>
+<p class="intro">La lettura del Nasdaq, ogni giorno <strong>prima dell’apertura americana.</strong></p>
+<div class="hero-form">
+<form class="optin" onsubmit="submitForm(event,this)">
+<input name="evento" type="hidden" value="il-nasdaq-e-servito"/>
+<input name="utm_source" type="hidden" value=""/>
+<input name="utm_medium" type="hidden" value=""/>
+<input name="utm_campaign" type="hidden" value=""/>
+<input name="utm_term" type="hidden" value=""/>
+<input name="utm_content" type="hidden" value=""/>
+<div class="fld"><label for="h-nome">Nome</label><input autocomplete="given-name" id="h-nome" name="nome" placeholder="Il tuo nome" required type="text"/></div>
+<div class="fld"><label for="h-mail">Email</label><input autocomplete="email" id="h-mail" name="email" placeholder="mario@email.it" required type="email"/></div>
+<div class="fld"><label for="h-tel">Telefono (WhatsApp)</label><input autocomplete="tel" id="h-tel" name="tel" placeholder="+39" required type="tel"/></div>
+<label class="consent"><input name="privacy" required type="checkbox"/><span>Ho letto l'<a href="/privacy-policy/" rel="noopener" target="_blank">informativa privacy</a> e acconsento al trattamento dei miei dati per ricevere l'accesso e le comunicazioni di servizio sull'evento. (obbligatorio)</span></label>
+<label class="consent"><input name="marketing" required type="checkbox"/><span>Acconsento a ricevere via email contenuti formativi e comunicazioni commerciali su corsi ed eventi. (obbligatorio, revocabile in ogni momento)</span></label>
+<button class="button full" type="submit">Riserva il posto gratuito</button>
+<p aria-live="polite" class="form-status" role="status"></p>
+</form>
+<p class="fine">Iscrizione gratuita. Nessuna carta di credito.</p>
+</div>
+</div>
+<div class="hero-side">
+<div class="when" aria-label="Martedì 24 novembre 2026, alle 21:00, ora italiana. Online e gratuito.">
+<div><span>Martedì</span><strong>24 novembre</strong></div>
+<div><span>Alle</span><strong>21:00</strong></div>
+<div><span>Dove</span><strong>Online · gratuito</strong></div>
+</div>
+<button class="video-thumb" id="play-video" type="button" aria-haspopup="dialog" aria-label="Guarda lo spot Il Nasdaq è servito, 32 secondi">
+<img src="video/copertina.jpg" alt="" width="1920" height="1080" fetchpriority="high">
+<span class="play-icon" aria-hidden="true">▶</span>
+<span class="thumb-label">Guarda lo spot · 32 secondi</span>
+</button>
+</div>
+
+</section>
+<section class="trust" aria-labelledby="storico-title"><div class="wrap"><h2 id="storico-title">Lo storico è pubblico</h2><p>Ogni trade di Andrea, giorno per giorno.<br>Comprese le giornate negative.</p><a class="text-link" href="https://andreatropea.com/" target="_blank" rel="noopener noreferrer">Guarda lo storico ↗</a></div></section>
+<section class="about" aria-labelledby="about-title"><div class="wrap about-grid"><h2 id="about-title">Che cos’è<br><span class="accent">Scalping Open Flow</span></h2><div class="about-copy"><p class="about-lead">È il metodo di Andrea Tropea per leggere il Nasdaq prima dell’apertura americana: si studia il posizionamento del mercato, si formula un’ipotesi sulla direzione del primo movimento e si decide come gestirla. Un’operazione al giorno, con regole fisse.</p><dl class="about-list"><div><dt>La lettura del giorno</dt><dd>Ogni mattina, prima dell’apertura, la direzione probabile del primo movimento con i livelli chiave.</dd></div><div><dt>La trading room live</dt><dd>Lunedì, mercoledì e venerdì la lettura nasce in diretta con Andrea.</dd></div><div><dt>Il videocorso</dt><dd>12 lezioni per imparare il metodo da zero, al tuo ritmo.</dd></div><div><dt>Lo storico pubblico</dt><dd>Ogni sessione è documentata, comprese le giornate negative.</dd></div></dl><p class="about-note">È formazione, non consulenza finanziaria: la decisione resta sempre tua.</p></div></div></section>
+<section class="method" id="scheda" aria-labelledby="scheda-title"><div class="wrap method-grid"><div><h2 id="scheda-title">Prima si prepara.<br>Poi si opera.</h2><ol class="steps"><li><span class="number">01</span><div><h3>Prima dell’apertura</h3><p>Si osserva dove si è posizionato il mercato. Il sistema legge gli open interest per analizzare il posizionamento sulle opzioni.</p></div></li><li><span class="number">02</span><div><h3>La lettura del giorno</h3><p>Prima dell’apertura arriva la direzione probabile del primo movimento del Nasdaq, con i livelli chiave e un punteggio di qualità da 1 a 5.</p></div></li><li><span class="number">03</span><div><h3>La decisione resta tua</h3><p>La lettura è un’ipotesi, non un ordine: chi la usa decide in autonomia.</p></div></li></ol></div><div class="ticket-board"><div class="rail" aria-hidden="true"></div><div class="clip" aria-hidden="true"></div><article class="ticket" aria-label="Scheda di esempio illustrativa"><header><p class="eyebrow">Scheda di esempio</p><h3>La lettura del giorno</h3><p>Nasdaq · prima dell’apertura USA</p></header><dl><div><dt>POSSIBILE FIRST MOVE</dt><dd><strong>LONG ↑</strong></dd></div><div><dt>QUALITÀ DELLA LETTURA</dt><dd><strong>5/5</strong></dd></div><div><dt>GAMMA</dt><dd>Positivo</dd></div><div><dt>LA GIORNATA</dt><dd>Possibile lateralizzazione iniziale</dd></div></dl><small>Nessuna promessa. La decisione è tua.<br>Contenuto educativo, non consulenza finanziaria.</small></article></div></div></section>
+<section class="schedule" aria-labelledby="settimana-title"><div class="wrap"><div class="section-heading"><h2 id="settimana-title">Com’è fatta la settimana</h2></div><div class="week"><p class="daily"><svg class="icon" aria-hidden="true"><use href="#timer"/></svg><span><strong>Ogni giorno, dal lunedì al venerdì:</strong> la lettura del Nasdaq prima dell’apertura americana.</span></p><ul class="live-days" aria-label="Le giornate della settimana"><li class="live"><b>Lun</b><span>Trading room live</span></li><li><b>Mar</b><span>Video di analisi</span></li><li class="live"><b>Mer</b><span>Trading room live</span></li><li><b>Gio</b><span>Video di analisi</span></li><li class="live"><b>Ven</b><span>Trading room live</span></li></ul></div><p class="schedule-note">La lettura arriva prima dell’apertura americana. Tre pomeriggi a settimana la vedi nascere in diretta con Andrea Tropea. Le live sono previste alle 15:10, in vista dell’apertura delle 15:30 (ora italiana); gli orari possono variare nei periodi di disallineamento dell’ora legale tra Europa e Stati Uniti.</p></div></section>
+<section class="course" aria-labelledby="corso-title"><div class="wrap"><div class="course-grid"><div class="book-stage"><div class="book" role="img" aria-label="Ricettario simbolico di Scalping Open Flow: videocorso digitale in 12 lezioni"><div class="book-cover"><p class="book-title">Scalping<br>Open Flow</p><p class="book-subtitle">Il ricettario del metodo</p><svg class="book-art" viewBox="0 0 90 90" aria-hidden="true"><path d="M13 75 39 43c-19-15 6-45 22-33 18 14-8 39-22 33M39 43C31 23 51 1 61 10M39 43C57 39 70 18 61 10M13 75l-5-4 26-34M40 79h43m-38-4V63m12 12V53m12 22V42m12 33V31"/></svg><p class="book-author">Andrea Tropea</p><p class="book-label">VIDEOCORSO · 12 LEZIONI</p></div><span class="bookmark" aria-hidden="true"></span></div></div><div class="course-copy"><h2 id="corso-title">La preparazione,<br>passo per passo.</h2><p class="duration">12 lezioni · circa 75 minuti</p><p>Dal primo accesso al primo trade, da guardare quando vuoi, anche se parti da zero. Si comincia con un video di benvenuto di Andrea.</p><p class="principle"><svg class="icon" aria-hidden="true"><use href="#check"/></svg><span>Meno improvvisazione,<br>meno overtrading.</span></p></div></div><div class="risk-grid"><article><h3>Il rischio si decide prima</h3><p>Si opera su CFD, con regole di rischio fisse e uno stop sempre definito: prima di entrare, non dopo. Si ragiona in punti, non in promesse.</p></article><article><h3>Si vede tutto, anche le giornate storte</h3><p>Le letture vengono pubblicate prima del mercato e documentate giornata per giornata, comprese quelle negative. Lo storico è consultabile pubblicamente.</p></article></div></div></section>
+<section class="closing" aria-labelledby="contatto-title"><div class="wrap"><h2 id="contatto-title">Martedì 24 novembre, alle 21:00.</h2><p>È pensato per chi vuole operare sul Nasdaq con regole chiare ed è consapevole che il trading comporta rischi. Nel webinar gratuito Andrea Tropea mostra come nasce la lettura del giorno: così puoi valutare se il metodo fa per te.</p><a class="button" href="#iscrizione">Riserva il posto gratuito</a><a class="secondary" href="https://wa.me/41415880293?text=Voglio%20informazioni%20su%20Scalping%20Open%20Flow">Hai domande? Scrivici su WhatsApp</a></div></section>
+</main>
+<dialog class="video-modal" id="video-modal" aria-label="Spot Il Nasdaq è servito">
+<button class="modal-close" id="close-video" type="button" aria-label="Chiudi il video">✕</button>
+<video id="hero-video" controls playsinline preload="none" poster="video/copertina.jpg"><source src="video/il-nasdaq-e-servito.mp4" type="video/mp4"></video>
+</dialog>
+
+<footer class="wrap footer"><div class="footer-top"><a class="brand" href="#iscrizione">ANDREA TROPEA</a><nav aria-label="Pagine legali"><a href="/privacy-policy/">Privacy Policy</a><a href="/cookie-policy/">Cookie Policy</a><a href="/termini-e-condizioni/">Termini e condizioni</a></nav></div><p class="company">Ideas Incubator AG · Stanserstrasse 100 · 6373 Ennetbürgen · CHE-114.536.253</p><div class="legal"><p><strong>Avvertenza sul rischio.</strong> Il trading e l’investimento in strumenti finanziari comportano un rischio elevato di perdita, anche totale, del capitale impiegato. Le perdite possono superare rapidamente l’esperienza e le disponibilità di chi opera. Valuta con attenzione se questa attività è adatta alla tua situazione e, se hai dubbi, rivolgiti a un consulente abilitato.</p><p><strong>Natura del servizio.</strong> Questo sito e il webinar Il Nasdaq è servito hanno finalità esclusivamente didattiche e informative. I contenuti non costituiscono consulenza in materia di investimenti, raccomandazioni personalizzate, ricerca in materia di investimenti né sollecitazione al pubblico risparmio. Ideas Incubator AG non è un intermediario finanziario, non riceve né trasmette ordini, non gestisce patrimoni di terzi e non offre servizi di segnalazione o replica automatica di operazioni.</p><p><strong>Risultati.</strong> Le operazioni mostrate in diretta si riferiscono a conti personali del relatore e sono presentate a scopo esemplificativo. I risultati passati, reali o simulati, non costituiscono alcuna garanzia di risultati futuri. Nessun rendimento è promesso o implicito. Chiunque operi sui mercati lo fa sotto la propria ed esclusiva responsabilità.</p></div></footer>
+
+<script>
+const modal=document.getElementById('video-modal'),video=document.getElementById('hero-video'),play=document.getElementById('play-video');
+play.addEventListener('click',()=>{modal.showModal();video.play().catch(()=>{});});
+document.getElementById('close-video').addEventListener('click',()=>modal.close());
+modal.addEventListener('click',e=>{if(e.target===modal)modal.close()});
+modal.addEventListener('close',()=>{video.pause();play.focus()});
+const UTM=['utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+const params=new URLSearchParams(location.search);
+let saved={};try{saved=JSON.parse(sessionStorage.getItem('nasdaq_utm')||'{}')}catch(e){}
+UTM.forEach(n=>{const v=params.get(n);if(v)saved[n]=v});
+try{sessionStorage.setItem('nasdaq_utm',JSON.stringify(saved))}catch(e){}
+UTM.forEach(n=>{if(saved[n])document.querySelectorAll('input[name="'+n+'"]').forEach(i=>i.value=saved[n])});
+/* DA COMPLETARE: webhook n8n dell'Evento e pagina di ringraziamento. */
+const WEBHOOK_URL='https://n8n.srv1253929.hstgr.cloud/webhook/il-nasdaq-e-servito';
+const THANK_YOU_URL='https://www.andreatropea.com/webinar-ty/';
+async function submitForm(e,form){
+ e.preventDefault();const btn=form.querySelector('button[type="submit"]');if(btn.disabled)return;
+ const status=form.querySelector('.form-status');const label=btn.textContent;
+ if(!form.checkValidity()){form.reportValidity();return}
+ btn.disabled=true;btn.textContent='Invio in corso…';status.textContent='';
+ const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),20000);
+ try{
+  const data=new FormData(form);['nome','email','tel'].forEach(k=>data.set(k,String(data.get(k)||'').trim()));data.set('privacy',form.privacy.checked?'si':'no');data.set('marketing',form.marketing.checked?'si':'no');data.set('pagina',location.href.split('?')[0]);
+  const r=await fetch(WEBHOOK_URL,{method:'POST',body:data,headers:{Accept:'application/json'},signal:controller.signal});
+  if(!r.ok)throw new Error('Submission failed');
+  if(THANK_YOU_URL)location.href=THANK_YOU_URL;else{status.classList.add('ok');status.textContent='Iscrizione ricevuta.';btn.textContent=label;btn.disabled=true;form.classList.add('sent')}
+ }catch(err){status.textContent=err.name==='AbortError'?'La risposta tarda ad arrivare. Verifica se hai ricevuto l’accesso prima di riprovare.':'Invio non riuscito. Controlla la connessione e riprova.';btn.disabled=false;btn.textContent=label}
+ finally{clearTimeout(timer)}
+}
+</script>
+</body></html>
