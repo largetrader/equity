@@ -1155,23 +1155,30 @@ function renderChart(sessions) {
         if (s.sistema === 'IF') { cumIF += v; partitoIF = true; } else { cumOF += v; }
         tot.push(cumTot); of.push(cumOF); inf.push(partitoIF ? cumIF : null);
     });
-    const labels = valid.map(s => formatDate(s.data));
+    let labels = valid.map(s => formatDate(s.data));
+    // Con solo Intraflow scelto, l'asse parte dalla sua prima operazione e
+    // ha una tacca per ogni operazione Intraflow (se no la linea resta schiacciata a destra).
+    let datiIF = inf;
+    if (sistemaAttivo === 'if') {
+        const iIF = valid.map((s, i) => s.sistema === 'IF' ? i : -1).filter(i => i >= 0);
+        labels = iIF.map(i => labels[i]);
+        datiIF = iIF.map(i => inf[i]);
+    }
 
-    const COL = { tot: '#3d6fb5', of: '#1a1f36', inf: '#d97706' };
-    // La linea del sistema scelto resta piena, le altre si attenuano.
-    const attiva = (k) => sistemaAttivo === 'all' || (sistemaAttivo === 'of' && k === 'of')
-        || (sistemaAttivo === 'if' && k === 'inf') || (k === 'tot' && sistemaAttivo === 'all');
-    const stile = (k, label, dati, spess) => {
-        const on = attiva(k);
-        return {
-            label: label, data: dati, spanGaps: false,
-            borderColor: on ? COL[k] : COL[k] + '33',
-            borderWidth: on ? spess : 1.5,
-            backgroundColor: COL[k], fill: false, tension: 0.3,
-            pointRadius: 0, pointHoverRadius: 5,
-            pointHoverBackgroundColor: COL[k], pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2,
-        };
-    };
+    const COL = { tot: '#d9249a', of: '#16a34a', inf: '#e8780a' };   // fucsia, verde, arancione
+    // Il selettore in alto decide quali linee si vedono: Tutto = tutte e tre,
+    // Open Flow = solo Open Flow, Intraflow = solo Intraflow.
+    const stile = (k, label, dati, spess) => ({
+        label: label, data: dati, spanGaps: false,
+        borderColor: COL[k], borderWidth: spess,
+        backgroundColor: COL[k], fill: false, tension: 0.3,
+        pointRadius: 0, pointHoverRadius: 5,
+        pointHoverBackgroundColor: COL[k], pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2,
+    });
+    const linee = [];
+    if (sistemaAttivo === 'all') linee.push(stile('tot', 'Totale', tot, 2.8));
+    if (sistemaAttivo !== 'if')  linee.push(stile('of', 'Open Flow', of, 2.2));
+    if (sistemaAttivo !== 'of')  linee.push(stile('inf', 'Intraflow', datiIF, 2.2));
 
     if (equityChartInstance) equityChartInstance.destroy();
 
@@ -1179,11 +1186,7 @@ function renderChart(sessions) {
         type: 'line',
         data: {
             labels: labels,
-            datasets: [
-                stile('tot', 'Totale', tot, 2.8),
-                stile('of', 'Open Flow', of, 2),
-                stile('inf', 'Intraflow', inf, 2),
-            ]
+            datasets: linee
         },
         options: {
             responsive: true,
@@ -1192,6 +1195,7 @@ function renderChart(sessions) {
             plugins: {
                 legend: {
                     display: true, position: 'top', align: 'end',
+                    onClick: () => {},   // la legenda e' solo una scritta: si cambia dal selettore
                     labels: { usePointStyle: true, pointStyle: 'line', boxWidth: 28,
                               font: { family: "'IBM Plex Mono', monospace", size: 11 }, color: '#5a6278' }
                 },
