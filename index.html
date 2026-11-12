@@ -355,6 +355,20 @@
         .sis-btn[data-sis="if"]:hover, .sis-btn[data-sis="if"].active {
             background: var(--if-bg); border-color: rgba(217,119,6,0.30); color: var(--if-color);
         }
+        .eq-switch { display: flex; gap: 6px; justify-content: flex-end; margin: 0 0 10px; }
+        .eq-btn {
+            font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.04em;
+            padding: 5px 12px; border-radius: 100px; cursor: pointer;
+            border: 1px solid var(--border-medium); background: transparent;
+            color: var(--text-muted); transition: var(--transition-base);
+        }
+        .eq-btn::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%;
+            margin-right: 7px; background: currentColor; opacity: .35; }
+        .eq-btn.active { color: var(--text-primary); border-color: var(--border-medium); background: rgba(0,0,0,0.03); }
+        .eq-btn.active::before { opacity: 1; }
+        .eq-btn[data-lin="tot"].active::before { background: #d9249a; }
+        .eq-btn[data-lin="of"].active::before { background: #16a34a; }
         .badge-if {
             display: inline-block; margin-left: 8px; padding: 1px 6px; border-radius: 4px;
             font-family: var(--font-mono); font-size: 10px; font-weight: 700; letter-spacing: 0.05em;
@@ -622,6 +636,10 @@
                 <h2 class="section-title">Equity Curve</h2>
             </div>
             <div class="chart-wrapper reveal">
+                <div class="eq-switch" id="eq-switch" role="group" aria-label="Linee da confrontare">
+                    <button class="eq-btn active" data-lin="tot" onclick="confronta('tot')">Tutto</button>
+                    <button class="eq-btn" data-lin="of" onclick="confronta('of')">Open Flow</button>
+                </div>
                 <div class="chart-container">
                     <canvas id="equityChart"></canvas>
                 </div>
@@ -936,6 +954,7 @@ const SHEET_ID = '2PACX-1vRSMpVqf32wIcmha6LvP3hhkdHzLu5KdOpKM5gejPbds6wE5KzTZIdx
 
 let allSessions = [];
 let ultimoHTMLTabella = null;
+let lineeConfronto = { tot: true, of: false };   // linee accese nel riquadro equity (solo con «Tutto»)
 let sistemaAttivo = 'all';   // 'all' | 'of' (Open Flow) | 'if' (Intraflow)
 let filtroAttivo = 'all';   // quale filtro sta guardando il visitatore adesso
 
@@ -1035,7 +1054,27 @@ function cambiaSistema(sis) {
     sistemaAttivo = sis;
     document.querySelectorAll('.sis-btn').forEach(b =>
         b.classList.toggle('active', b.dataset.sis === sis));
+    aggiornaBottoniEquity();
     render(allSessions);
+}
+
+// Nel riquadro dell'equity, solo con «Tutto»: si puo' aggiungere la linea Open Flow
+// accanto a quella del totale, per vedere a che punto e' rispetto ai due sistemi insieme.
+function confronta(lin) {
+    const altra = lin === 'tot' ? 'of' : 'tot';
+    // almeno una linea deve restare accesa
+    if (lineeConfronto[lin] && !lineeConfronto[altra]) return;
+    lineeConfronto[lin] = !lineeConfronto[lin];
+    aggiornaBottoniEquity();
+    renderChart(allSessions);
+}
+
+function aggiornaBottoniEquity() {
+    const box = document.getElementById('eq-switch');
+    if (!box) return;
+    box.style.display = sistemaAttivo === 'all' ? '' : 'none';
+    box.querySelectorAll('.eq-btn').forEach(b =>
+        b.classList.toggle('active', !!lineeConfronto[b.dataset.lin]));
 }
 
 function ripulisci(v) {
@@ -1166,7 +1205,7 @@ function renderChart(sessions) {
     }
 
     const COL = { tot: '#d9249a', of: '#16a34a', inf: '#e8780a' };   // fucsia, verde, arancione
-    // Il selettore in alto decide quali linee si vedono: Tutto = tutte e tre,
+    // Il selettore in alto decide quali linee si vedono: Tutto = solo la linea del totale (con Open Flow aggiungibile dai bottoni del riquadro),
     // Open Flow = solo Open Flow, Intraflow = solo Intraflow.
     const stile = (k, label, dati, spess) => ({
         label: label, data: dati, spanGaps: false,
@@ -1176,9 +1215,10 @@ function renderChart(sessions) {
         pointHoverBackgroundColor: COL[k], pointHoverBorderColor: '#fff', pointHoverBorderWidth: 2,
     });
     const linee = [];
-    if (sistemaAttivo === 'all') linee.push(stile('tot', 'Totale', tot, 2.8));
-    if (sistemaAttivo !== 'if')  linee.push(stile('of', 'Open Flow', of, 2.2));
-    if (sistemaAttivo !== 'of')  linee.push(stile('inf', 'Intraflow', datiIF, 2.2));
+    if (sistemaAttivo === 'all' && lineeConfronto.tot) linee.push(stile('tot', 'Totale', tot, 2.8));
+    if (sistemaAttivo === 'all' && lineeConfronto.of)  linee.push(stile('of', 'Open Flow', of, 2.2));
+    if (sistemaAttivo === 'of')  linee.push(stile('of', 'Open Flow', of, 2.2));
+    if (sistemaAttivo === 'if')  linee.push(stile('inf', 'Intraflow', datiIF, 2.2));
 
     if (equityChartInstance) equityChartInstance.destroy();
 
